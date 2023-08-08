@@ -9,10 +9,10 @@
 
 https://gitee.com/liuxiaoxiaobo/shxy-curriculum/raw/master/video/video.mp4
 
-![操作1](https://gitee.com/liuxiaoxiaobo/shxy-curriculum/raw/master/img/1.jpg "操作1")
+<video src="https://gitee.com/liuxiaoxiaobo/shxy-curriculum/raw/master/video/video.mp4"></video>
 
-![操作2](https://gitee.com/liuxiaoxiaobo/shxy-curriculum/raw/master/img/2.jpg "操作2")
-
+<img src="https://gitee.com/liuxiaoxiaobo/shxy-curriculum/raw/master/img/1.jpg" width="40%">
+<img src="https://gitee.com/liuxiaoxiaobo/shxy-curriculum/raw/master/img/2.jpg" width="40%">
 
 ## 🔍获取数据方式
 
