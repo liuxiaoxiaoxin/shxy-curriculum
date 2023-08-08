@@ -5,6 +5,8 @@
 适配绥化学院乘方教务系统，仅供参考。能力有限，欢迎赐教
 
 ## ▶️操作方式
+存放在video文件夹下，video.mp4
+https://gitee.com/liuxiaoxiaobo/shxy-curriculum/blob/master/video/video.mp4
 <video src='video/video.mp4'><video>
 
 
