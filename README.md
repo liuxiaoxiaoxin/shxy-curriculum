@@ -6,8 +6,10 @@
 
 ## ▶️操作方式
 存放在video文件夹下，video.mp4
-https://gitee.com/liuxiaoxiaobo/shxy-curriculum/blob/master/video/video.mp4
-<video src='video/video.mp4'><video>
+
+https://gitee.com/liuxiaoxiaobo/shxy-curriculum/raw/master/video/video.mp4
+
+<video src='https://gitee.com/liuxiaoxiaobo/shxy-curriculum/raw/master/video/video.mp4'><video>
 
 
 ## 🔍获取数据方式
