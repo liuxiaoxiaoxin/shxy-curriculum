@@ -108,13 +108,13 @@ async function scheduleTimer({
         for (let i = 11; i <= MaxsectionIs; i++) {
             let temp1 = {}
             temp1.section = i
-            temp1.startTime = addTime(courseTime1[courseTime1.length-1].endTime, 10)
-            temp1.endTime = addTime(courseTime1[courseTime1.length-1].endTime, 55)
+            temp1.startTime = addTime(courseTime1[courseTime1.length - 1].endTime, 10)
+            temp1.endTime = addTime(courseTime1[courseTime1.length - 1].endTime, 55)
 
             let temp2 = {}
             temp2.section = i
-            temp2.startTime = addTime(courseTime2[courseTime2.length-1].endTime, 10)
-            temp2.endTime = addTime(courseTime2[courseTime2.length-1].endTime, 55)
+            temp2.startTime = addTime(courseTime2[courseTime2.length - 1].endTime, 10)
+            temp2.endTime = addTime(courseTime2[courseTime2.length - 1].endTime, 55)
 
             courseTime1.push(temp1)
             courseTime2.push(temp2)
@@ -126,13 +126,13 @@ async function scheduleTimer({
         for (let i = 11; i <= MaxsectionIs; i++) {
             let temp1 = {}
             temp1.section = i
-            temp1.startTime = addTime(courseTime1[courseTime1.length-1].endTime, 10)
-            temp1.endTime = addTime(courseTime1[courseTime1.length-1].endTime, 55)
+            temp1.startTime = addTime(courseTime1[courseTime1.length - 1].endTime, 10)
+            temp1.endTime = addTime(courseTime1[courseTime1.length - 1].endTime, 55)
 
             let temp2 = {}
             temp2.section = i
-            temp2.startTime = addTime(courseTime2[courseTime2.length-1].endTime, 10)
-            temp2.endTime = addTime(courseTime2[courseTime2.length-1].endTime, 55)
+            temp2.startTime = addTime(courseTime2[courseTime2.length - 1].endTime, 10)
+            temp2.endTime = addTime(courseTime2[courseTime2.length - 1].endTime, 55)
 
             courseTime1.push(temp1)
             courseTime2.push(temp2)
@@ -166,16 +166,32 @@ async function scheduleTimer({
     }
 
     await loadTool('AIScheduleTools')
+
+    let info =
+        '作息时间一般在每年的5月1日和10月1日进行替换\n' +
+        '\n建议在换作息时间时重新导入课表\n' +
+        '\n2-5月选秋季学期作息'+
+        '\n5-7月换成春季学期作息\n' +
+        '\n 9-10月选春季学期作息'+
+        '\n10-12月换成秋季学期作息'
+
+    await AIScheduleAlert({
+        titleText: '作息时间选择',
+        contentText: info,
+        confirmText: '确认',
+    })
+
+
     const userSelect = await AIScheduleSelect({
         titleText: '',
-        contentText: '请选择作息时间',
+        contentText: '选择作息时间',
         selectList: [
             '春季',
             '秋季',
         ],
     })
 
-    let info =
+    info =
         "学期：" + userSelect +
         "\n校历总周数：" + week +
         '\n最大上课周：' + maxWeekIs +
