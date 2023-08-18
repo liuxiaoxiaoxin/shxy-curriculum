@@ -167,27 +167,14 @@ async function scheduleTimer({
 
     await loadTool('AIScheduleTools')
 
-    let info =
-        '作息时间一般在每年的5月1日和10月1日进行替换\n' +
-        '\n建议在换作息时间时重新导入课表\n' +
-        '\n2-5月选秋季学期作息'+
-        '\n5-7月换成春季学期作息\n' +
-        '\n 9-10月选春季学期作息'+
-        '\n10-12月换成秋季学期作息'
-
-    await AIScheduleAlert({
-        titleText: '作息时间选择',
-        contentText: info,
-        confirmText: '确认',
-    })
-
-
     const userSelect = await AIScheduleSelect({
         titleText: '',
         contentText: '选择作息时间',
         selectList: [
-            '春季',
-            '秋季',
+            '2-5月秋季',
+            '5-7月春季',
+            '8-10月春季',
+            '10-12月秋季'
         ],
     })
 
@@ -199,7 +186,7 @@ async function scheduleTimer({
         "\n开学时间：" + timestampToTime(Number(timestamp)).split(' ')[0] +
         "\n\n课程信息核对\n\n" + course
 
-    if (userSelect == '春季') {
+    if (userSelect === '5-7月春季' || userSelect === '8-10月春季') {
         courseTime = courseTime1
     } else {
         courseTime = courseTime2
